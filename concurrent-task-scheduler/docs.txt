@@ -1,0 +1,9 @@
+Task Submission: Users must be able to submit a task by providing a URL to be called and a delay (in seconds) after which the task should be executed.
+Asynchronous Execution: When a task is submitted, the API should respond immediately with a unique task ID. The actual execution of the task (the HTTP call) should happen in the background after the specified delay.
+
+Task State Management: Each task should have a status. The possible statuses are:
+PENDING: The task has been accepted but is waiting for its execution time.
+EXECUTING: The task is currently making the HTTP request.
+COMPLETED: The task's HTTP request finished with a 2xx status code.
+FAILED: The task's HTTP request resulted in a non-2xx status code or another error (e.g., timeout, DNS lookup failure).
+Status Check: Users must be able to query the status and details of a specific task using its ID.
